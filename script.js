@@ -69,7 +69,7 @@ const closeImageViewer = () => {
 
 if (imageViewer && viewerImage && viewerCaption) {
   document.querySelectorAll("[data-viewer-open]").forEach((trigger) => {
-    trigger.addEventListener("click", () => {
+    const openViewer = () => {
       lastViewerTrigger = trigger;
       viewerImage.src = trigger.dataset.imageSrc || "";
       viewerImage.alt = trigger.dataset.imageAlt || "";
@@ -78,6 +78,14 @@ if (imageViewer && viewerImage && viewerCaption) {
       imageViewer.setAttribute("aria-hidden", "false");
       document.body.classList.add("viewer-open");
       viewerCloseButton?.focus();
+    };
+
+    trigger.addEventListener("click", openViewer);
+    trigger.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openViewer();
+      }
     });
   });
 

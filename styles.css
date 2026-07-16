@@ -160,9 +160,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   display: block;
   width: 100%;
   overflow: hidden;
+  cursor: zoom-in;
 }
-.hero-art-open img { display: block; width: 100%; height: auto; aspect-ratio: 2.327 / 1; object-fit: cover; transition: transform 450ms ease; }
-.hero-art-open:hover img { transform: scale(1.02); }
+.hero-art-open img { display: block; width: 100%; height: auto; aspect-ratio: 2.327 / 1; object-fit: cover; }
 .zoom-hint {
   position: absolute;
   z-index: 2;
@@ -179,22 +179,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   backdrop-filter: blur(8px);
   pointer-events: none;
 }
-.image-open-trigger {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: zoom-in;
-}
+.hero-art-open:focus-visible,
+.art-preview-photo:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 .hero-art-caption { display: grid; padding: 17px 8px 7px; }
 .hero-art-caption span { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
 .hero-art-caption strong { margin-top: 6px; font-family: var(--serif); font-size: 20px; font-weight: 400; }
@@ -217,8 +203,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .work-card-wide .art-preview-photo { aspect-ratio: auto; background: transparent; }
 .art-preview::after { position: absolute; inset: 0; content: ""; box-shadow: inset 0 0 80px rgba(0,0,0,.14); }
 .art-preview-photo::after { content: none; box-shadow: none; }
-.work-image { display: block; width: 100%; height: auto; transition: transform 700ms cubic-bezier(.2,.7,.1,1); }
-.art-preview-photo:hover .work-image { transform: scale(1.02); }
+.art-preview-photo { cursor: zoom-in; }
+.work-image { display: block; width: 100%; height: auto; }
 .art-surface { position: absolute; inset: 0; transition: transform 700ms cubic-bezier(.2,.7,.1,1); }
 .work-card:hover .art-surface, .work-card:hover .glass-form { transform: scale(1.035); }
 .preview-note {
