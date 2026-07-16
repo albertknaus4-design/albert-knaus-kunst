@@ -16,5 +16,6 @@ Farben, Strukturen und moderne Eleganz.
 
 ## Veröffentlichung auf GitHub Pages
 
-Das Repository muss `albertknaus4-design.github.io` heißen. Danach unter
-`Settings → Pages → Deploy from a branch` den Branch `main` und den Ordner `/ (root)` auswählen.
+Im Repository unter `Settings → Pages → Deploy from a branch` den Branch `main`
+und den Ordner `/ (root)` auswählen. Die Webseite ist danach unter
+`https://albertknaus4-design.github.io/albert-knaus-kunst/` erreichbar.
