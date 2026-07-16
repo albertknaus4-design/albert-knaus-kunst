@@ -44,3 +44,18 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 
 const year = document.querySelector("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
+
+document.querySelectorAll("[data-image-zoom]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const isZoomed = button.classList.toggle("is-zoomed");
+    const label = button.querySelector("[data-zoom-label]");
+
+    button.setAttribute("aria-pressed", String(isZoomed));
+    button.setAttribute(
+      "aria-label",
+      isZoomed ? "Bild wieder verkleinern" : "Bild etwas vergrößern"
+    );
+
+    if (label) label.textContent = isZoomed ? "Verkleinern" : "Vergrößern";
+  });
+});
