@@ -44,16 +44,3 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 
 const year = document.querySelector("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
-
-const lightbox = document.querySelector("[data-lightbox]");
-const lightboxOpen = document.querySelector("[data-lightbox-open]");
-const lightboxClose = document.querySelector("[data-lightbox-close]");
-
-if (lightbox instanceof HTMLDialogElement && lightboxOpen && lightboxClose) {
-  lightboxOpen.addEventListener("click", () => lightbox.showModal());
-  lightboxClose.addEventListener("click", () => lightbox.close());
-
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) lightbox.close();
-  });
-}
