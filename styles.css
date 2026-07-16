@@ -59,9 +59,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   width: 100%;
   min-height: 84px;
   padding: 12px max(20px, calc((100% - 1180px) / 2));
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  background: var(--paper);
   border-bottom: 1px solid transparent;
-  backdrop-filter: blur(16px);
   transition: min-height 180ms ease, border-color 180ms ease;
 }
 .site-header.is-scrolled { min-height: 70px; border-color: var(--line); }
@@ -176,7 +175,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-weight: 750;
   letter-spacing: .1em;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   pointer-events: none;
 }
 .hero-art-open:focus-visible,
@@ -200,11 +200,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .art-preview-photo,
 .work-card-large .art-preview-photo,
 .work-card-portrait .art-preview-photo,
-.work-card-wide .art-preview-photo { aspect-ratio: auto; background: transparent; }
+.work-card-wide .art-preview-photo {
+  height: auto;
+  aspect-ratio: unset;
+  overflow: visible;
+  background: transparent;
+  line-height: 0;
+}
 .art-preview::after { position: absolute; inset: 0; content: ""; box-shadow: inset 0 0 80px rgba(0,0,0,.14); }
 .art-preview-photo::after { content: none; box-shadow: none; }
 .art-preview-photo { cursor: zoom-in; }
-.work-image { display: block; width: 100%; height: auto; }
+.work-image { display: block; width: 100%; max-width: 100%; height: auto; vertical-align: middle; }
 .art-surface { position: absolute; inset: 0; transition: transform 700ms cubic-bezier(.2,.7,.1,1); }
 .work-card:hover .art-surface, .work-card:hover .glass-form { transform: scale(1.035); }
 .preview-note {
@@ -491,7 +497,7 @@ body.viewer-open { overflow: hidden; }
   .art-preview-photo,
   .work-card-large .art-preview-photo,
   .work-card-portrait .art-preview-photo,
-  .work-card-wide .art-preview-photo { aspect-ratio: auto; }
+  .work-card-wide .art-preview-photo { height: auto; aspect-ratio: unset; }
   .work-meta h3 { font-size: 21px; }
   .about blockquote { font-size: 42px; }
   .contact { width: 100%; margin-bottom: 70px; padding-block: 72px; }
