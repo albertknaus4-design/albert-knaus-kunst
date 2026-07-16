@@ -278,6 +278,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .work-meta h3 { margin: 0; font-family: var(--serif); font-size: 24px; font-weight: 400; }
 .work-meta p { margin: 4px 0 0; color: var(--muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
 .work-meta > span { flex: 0 0 auto; color: var(--muted); font-size: 12px; }
+.work-description {
+  max-width: 62ch;
+  margin: 14px 0 0;
+  color: #4f4d47;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.work-card-wide .work-description { max-width: 78ch; }
 
 .about { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(50px, 10vw, 150px); padding-block: 130px; border-top: 1px solid var(--line); }
 .about blockquote { max-width: 700px; margin: 0; font-family: var(--serif); font-size: clamp(42px, 5.2vw, 72px); line-height: 1.08; letter-spacing: -.035em; }
