@@ -66,15 +66,32 @@
         </div>
 
         <figure class="hero-art reveal">
-          <img
-            src="assets/gold-schwarz-struktur.jpeg"
-            alt="Abstraktes Originalgemälde von Albert Knaus in Gold, Schwarz, Weiß und Bordeaux"
-          />
+          <button
+            class="hero-art-open"
+            type="button"
+            data-lightbox-open
+            aria-label="Gemälde vergrößert anzeigen"
+          >
+            <img
+              src="assets/gold-schwarz-struktur.jpeg"
+              alt="Abstraktes Originalgemälde von Albert Knaus in Gold, Schwarz, Weiß und Bordeaux"
+            />
+            <span class="zoom-hint" aria-hidden="true">＋ Vergrößern</span>
+          </button>
           <figcaption class="hero-art-caption">
             <span>Original von Albert Knaus</span>
             <strong>Gold · Schwarz · Struktur</strong>
           </figcaption>
         </figure>
+
+        <dialog class="lightbox" data-lightbox aria-label="Vergrößerte Ansicht des Gemäldes">
+          <button class="lightbox-close" type="button" data-lightbox-close aria-label="Großansicht schließen">×</button>
+          <img
+            src="assets/gold-schwarz-struktur.jpeg"
+            alt="Abstraktes Originalgemälde von Albert Knaus in Gold, Schwarz, Weiß und Bordeaux – Großansicht"
+          />
+          <p>Original von Albert Knaus · Gold · Schwarz · Struktur</p>
+        </dialog>
       </section>
 
       <section id="werke" class="works section-shell">
