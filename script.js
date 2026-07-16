@@ -45,17 +45,47 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 const year = document.querySelector("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
 
-document.querySelectorAll("[data-image-zoom]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const isZoomed = button.classList.toggle("is-zoomed");
-    const label = button.querySelector("[data-zoom-label]");
+const imageViewer = document.querySelector("[data-image-viewer]");
+const viewerImage = imageViewer?.querySelector("[data-viewer-image]");
+const viewerCaption = imageViewer?.querySelector("[data-viewer-caption]");
+const viewerCloseButton = imageViewer?.querySelector(".image-viewer-close");
+let lastViewerTrigger = null;
 
-    button.setAttribute("aria-pressed", String(isZoomed));
-    button.setAttribute(
-      "aria-label",
-      isZoomed ? "Bild wieder verkleinern" : "Bild etwas vergrößern"
-    );
+const closeImageViewer = () => {
+  if (!imageViewer || imageViewer.hidden) return;
 
-    if (label) label.textContent = isZoomed ? "Verkleinern" : "Vergrößern";
+  imageViewer.hidden = true;
+  imageViewer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("viewer-open");
+
+  if (viewerImage) {
+    viewerImage.removeAttribute("src");
+    viewerImage.alt = "";
+  }
+
+  lastViewerTrigger?.focus();
+  lastViewerTrigger = null;
+};
+
+if (imageViewer && viewerImage && viewerCaption) {
+  document.querySelectorAll("[data-viewer-open]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      lastViewerTrigger = trigger;
+      viewerImage.src = trigger.dataset.imageSrc || "";
+      viewerImage.alt = trigger.dataset.imageAlt || "";
+      viewerCaption.textContent = trigger.dataset.imageCaption || "";
+      imageViewer.hidden = false;
+      imageViewer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("viewer-open");
+      viewerCloseButton?.focus();
+    });
   });
-});
+
+  imageViewer.querySelectorAll("[data-viewer-close]").forEach((button) => {
+    button.addEventListener("click", closeImageViewer);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeImageViewer();
+  });
+}

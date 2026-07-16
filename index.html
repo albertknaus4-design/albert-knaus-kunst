@@ -66,19 +66,22 @@
         </div>
 
         <figure class="hero-art reveal">
-          <button
-            class="hero-art-open"
-            type="button"
-            data-image-zoom
-            aria-pressed="false"
-            aria-label="Gemälde vergrößert anzeigen"
-          >
+          <div class="hero-art-open">
             <img
               src="assets/gold-schwarz-struktur.jpeg"
               alt="Abstraktes Originalgemälde von Albert Knaus in Gold, Schwarz, Weiß und Bordeaux"
             />
-            <span class="zoom-hint" aria-hidden="true">＋ <span data-zoom-label>Vergrößern</span></span>
-          </button>
+            <button
+              class="image-open-trigger"
+              type="button"
+              data-viewer-open
+              data-image-src="assets/gold-schwarz-struktur.jpeg"
+              data-image-alt="Abstraktes Originalgemälde von Albert Knaus in Gold, Schwarz, Weiß und Bordeaux"
+              data-image-caption="Gold · Schwarz · Struktur"
+              aria-label="Gold · Schwarz · Struktur groß anzeigen"
+            ></button>
+            <span class="zoom-hint" aria-hidden="true">＋ Vergrößern</span>
+          </div>
           <figcaption class="hero-art-caption">
             <span>Original von Albert Knaus</span>
             <strong>Gold · Schwarz · Struktur</strong>
@@ -99,21 +102,22 @@
         <div class="work-grid">
           <article class="work-card work-card-large reveal">
             <div class="art-preview art-preview-photo">
+              <img
+                class="work-image"
+                src="assets/relief-schwarz-gold.jpeg"
+                alt="Abstraktes Relief von Albert Knaus in Schwarz, Silber, Gold und Bordeaux"
+                loading="lazy"
+              />
               <button
-                class="work-image-button"
+                class="image-open-trigger"
                 type="button"
-                data-image-zoom
-                aria-pressed="false"
-                aria-label="Relief in Schwarz und Gold vergrößert anzeigen"
-              >
-                <img
-                  class="work-image"
-                  src="assets/relief-schwarz-gold.jpeg"
-                  alt="Abstraktes Relief von Albert Knaus in Schwarz, Silber, Gold und Bordeaux"
-                  loading="lazy"
-                />
-                <span class="zoom-hint" aria-hidden="true">＋ <span data-zoom-label>Vergrößern</span></span>
-              </button>
+                data-viewer-open
+                data-image-src="assets/relief-schwarz-gold.jpeg"
+                data-image-alt="Abstraktes Relief von Albert Knaus in Schwarz, Silber, Gold und Bordeaux"
+                data-image-caption="Relief in Schwarz &amp; Gold"
+                aria-label="Relief in Schwarz und Gold groß anzeigen"
+              ></button>
+              <span class="zoom-hint" aria-hidden="true">＋ Vergrößern</span>
             </div>
             <div class="work-meta">
               <div><h3>Relief in Schwarz &amp; Gold</h3><p>Struktur · Metallic-Akzente</p></div>
@@ -134,21 +138,22 @@
 
           <article class="work-card work-card-portrait reveal">
             <div class="art-preview art-preview-photo">
+              <img
+                class="work-image"
+                src="assets/silberne-bewegung.jpeg"
+                alt="Helles abstraktes Relief von Albert Knaus mit fließenden silbernen und perlmuttfarbenen Strukturen"
+                loading="lazy"
+              />
               <button
-                class="work-image-button"
+                class="image-open-trigger"
                 type="button"
-                data-image-zoom
-                aria-pressed="false"
-                aria-label="Silberne Bewegung vergrößert anzeigen"
-              >
-                <img
-                  class="work-image"
-                  src="assets/silberne-bewegung.jpeg"
-                  alt="Helles abstraktes Relief von Albert Knaus mit fließenden silbernen und perlmuttfarbenen Strukturen"
-                  loading="lazy"
-                />
-                <span class="zoom-hint" aria-hidden="true">＋ <span data-zoom-label>Vergrößern</span></span>
-              </button>
+                data-viewer-open
+                data-image-src="assets/silberne-bewegung.jpeg"
+                data-image-alt="Helles abstraktes Relief von Albert Knaus mit fließenden silbernen und perlmuttfarbenen Strukturen"
+                data-image-caption="Silberne Bewegung"
+                aria-label="Silberne Bewegung groß anzeigen"
+              ></button>
+              <span class="zoom-hint" aria-hidden="true">＋ Vergrößern</span>
             </div>
             <div class="work-meta">
               <div><h3>Silberne Bewegung</h3><p>Relief · Silber · Perlmutt</p></div>
@@ -180,21 +185,22 @@
 
           <article class="work-card work-card-wide reveal">
             <div class="art-preview art-preview-photo">
+              <img
+                class="work-image"
+                src="assets/goldene-stille.jpeg"
+                alt="Horizontales abstraktes Originalgemälde von Albert Knaus in Weiß, Beige, Schwarz und Gold"
+                loading="lazy"
+              />
               <button
-                class="work-image-button"
+                class="image-open-trigger"
                 type="button"
-                data-image-zoom
-                aria-pressed="false"
-                aria-label="Goldene Stille vergrößert anzeigen"
-              >
-                <img
-                  class="work-image"
-                  src="assets/goldene-stille.jpeg"
-                  alt="Horizontales abstraktes Originalgemälde von Albert Knaus in Weiß, Beige, Schwarz und Gold"
-                  loading="lazy"
-                />
-                <span class="zoom-hint" aria-hidden="true">＋ <span data-zoom-label>Vergrößern</span></span>
-              </button>
+                data-viewer-open
+                data-image-src="assets/goldene-stille.jpeg"
+                data-image-alt="Horizontales abstraktes Originalgemälde von Albert Knaus in Weiß, Beige, Schwarz und Gold"
+                data-image-caption="Goldene Stille"
+                aria-label="Goldene Stille groß anzeigen"
+              ></button>
+              <span class="zoom-hint" aria-hidden="true">＋ Vergrößern</span>
             </div>
             <div class="work-meta">
               <div><h3>Goldene Stille</h3><p>Originalgemälde · Gold · Weiß</p></div>
@@ -266,5 +272,30 @@
       <p>© <span data-year></span> Albert Knaus</p>
       <div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
     </footer>
+
+    <div
+      class="image-viewer"
+      data-image-viewer
+      role="dialog"
+      aria-modal="true"
+      aria-label="Vergrößerte Bildansicht"
+      aria-hidden="true"
+      hidden
+    >
+      <button
+        class="image-viewer-backdrop"
+        type="button"
+        data-viewer-close
+        tabindex="-1"
+        aria-label="Großansicht schließen"
+      ></button>
+      <div class="image-viewer-panel">
+        <button class="image-viewer-close" type="button" data-viewer-close>
+          <span aria-hidden="true">×</span> Schließen
+        </button>
+        <img data-viewer-image alt="" />
+        <p data-viewer-caption></p>
+      </div>
+    </div>
   </body>
 </html>
