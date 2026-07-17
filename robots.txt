@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://albert-knaus-kunst.de/sitemap.xml
